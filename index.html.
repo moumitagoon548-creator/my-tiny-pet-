@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Tiny Pet 🎀</title>
+<style>
+body {
+  background: #fff0f6;
+  color: #b34d7c;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 25px 10px;
+}
+.card {
+  background: white;
+  border: 2px solid pink;
+  border-radius: 25px;
+  padding: 20px;
+  max-width: 340px;
+  margin: auto;
+}
+.pet { font-size: 90px; margin: 20px; }
+button {
+  background: #ffc4dc;
+  color: #8b315c;
+  border: none;
+  border-radius: 15px;
+  padding: 12px;
+  margin: 5px;
+  font-size: 16px;
+}
+.stats {
+  background: #fff0f6;
+  border-radius: 15px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>My Tiny Pet 🎀</h1>
+  <p>Your little bunny loves you!</p>
+  <div class="pet" id="pet">🐰</div>
+  <div class="stats">
+    💗 Happiness: <span id="score">50</span>/100
+    <p id="message">Give your bunny some love!</p>
+  </div>
+  <button onclick="feed()">🍓 Feed</button>
+  <button onclick="play()">🧸 Play</button>
+  <button onclick="love()">💕 Cuddle</button>
+  <p>Made with love ♡</p>
+</div>
+<script>
+let happiness = 50;
+function update(message) {
+  happiness = Math.max(0, Math.min(100, happiness));
+  document.getElementById("score").textContent = happiness;
+  document.getElementById("message").textContent = message;
+}
+function feed() {
+  happiness += 10;
+  document.getElementById("pet").textContent = "🐰";
+  update("Yummy strawberries! 🍓");
+}
+function play() {
+  happiness += 15;
+  document.getElementById("pet").textContent = "🐇";
+  update("Boing boing! So much fun! 💗");
+}
+function love() {
+  happiness += 5;
+  document.getElementById("pet").textContent = "🥰";
+  update("Your bunny feels so loved! 🎀");
+}
+</script>
+</body>
+</html>
